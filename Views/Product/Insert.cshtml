@@ -1,0 +1,36 @@
+﻿@model BestStoreMVC.Models.ProductModel
+
+<h2>Add New Product</h2>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+<form asp-action="Insert" method="post">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Brand</label>
+        <input asp-for="Brand" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input asp-for="Category" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Price</label>
+        <input asp-for="Price" type="number" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Image File Name</label>
+        <input asp-for="ImageFileName" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
